@@ -17,7 +17,7 @@
     "tgo-service-serve": "./service/bin/serve.js",
     "tgo-service-build": "./service/bin/build.js"
   },
-  
+
   "scripts": {
     "test": "npm run lint:bin && npm run lint:lib && tgo create test -q && npm run cover",
     "lint:bin": "eslint bin/*.js",
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jurieo/tgo-build.git"
+    "url": "https://github.com/jurieo/tgo-cli.git"
   },
   "author": "",
   

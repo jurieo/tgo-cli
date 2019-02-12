@@ -16,14 +16,15 @@ function start() {
     if (this.commander.noversion){
       resolve();
     } else {
-      this.spinner.start('正在查询tgo-build最新版本');
-      checkVersion.call(this).then(() => {
-        this.spinner.stop();
-        resolve();
-      }, version => {
-        msg.fail(this.spinner, `请将 tgo-build 更新到最新版本(v${version})`);
-        process.exit();
-      });
+      resolve();
+      // this.spinner.start('正在查询tgo-build最新版本');
+      // checkVersion.call(this).then(() => {
+      //   this.spinner.stop();
+      //   resolve();
+      // }, version => {
+      //   msg.fail(this.spinner, `请将 tgo-build 更新到最新版本(v${version})`);
+      //   process.exit();
+      // });
     }
   });
 }
