@@ -1,3 +1,7 @@
-# TGO-BUILD
+# X-BUILD
+[![Build Status](https://travis-ci.org/codexu/x-build.svg?branch=master)](https://travis-ci.org/codexu/x-build)
+[![](https://img.shields.io/npm/v/x-build.svg)](https://www.npmjs.com/package/x-build)
+[![](https://img.shields.io/npm/dm/x-build.svg)](https://www.npmjs.com/package/x-build)
+[![](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/codexu/x-build/blob/master/LICENSE)
 
-TGO-BUILD 是家乐淘公司内部使用的针对 H5 开发的一套自动化构建工具，致力于提升开发效率，减小开发难度。
+**Documentation:** [https://codexu.github.io/](https://codexu.github.io/)

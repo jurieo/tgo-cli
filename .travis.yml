@@ -1,13 +1,43 @@
 language: node_js
+sudo: required
 node_js:
     - 8
+    - 10
 cache: npm
 install:
-    - npm install -g npm@latest
-    - npm --version
-    - npm install --registry http://registry.npmjs.org
-    - npm install -g codecov
+    - npm install
 script:
     - npm link
-    - npm run test
-    - codecov
+    - x create quick -q -n
+    - cd quick
+    - npm run build
+    - cd ..
+    - mkdir bs
+    - cd bs
+    - x test bs
+    - npm run build
+    - cd ..
+    - mkdir pug
+    - cd pug 
+    - x test pug
+    - npm run build
+    - cd ..
+    - mkdir mobileLayout
+    - cd mobileLayout 
+    - x test mobileLayout
+    - npm run build
+    - cd ..
+    - mkdir sass
+    - cd sass 
+    - x test sass
+    - npm run build
+    - cd ..
+    - mkdir less
+    - cd less 
+    - x test less
+    - npm run build
+    - cd ..
+    - mkdir stylus
+    - cd stylus 
+    - x test stylus
+    - npm run build
