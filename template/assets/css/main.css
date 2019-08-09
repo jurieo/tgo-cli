@@ -1,0 +1,79 @@
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.2s;
+}
+
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
+html {
+  /* font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
+  font-family: Helvetica;
+  font-size: 10px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+* {
+  touch-action: pan-y;
+}
+
+body {
+  font-size: 1.4rem;
+  color: #333333;
+}
+
+div,
+span,
+i,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #333333;
+}
+
+.r {
+  float: right;
+}
+
+.l {
+  float: left;
+}
