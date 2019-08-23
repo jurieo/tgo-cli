@@ -1,3 +1,9 @@
+<!--
+ * @Author: Jurieo
+ * @Date: 2019-08-23 11:35:07
+ * @LastEditTime: 2019-08-23 11:52:25
+ * @Description: file
+ -->
 <template>
   <div>
     <nuxt />
@@ -5,18 +11,6 @@
 </template>
 
 <style>
-html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
 *,
 *:before,
 *:after {

@@ -1,3 +1,9 @@
+<!--
+ * @Author: Jurieo
+ * @Date: 2019-08-09 11:32:38
+ * @LastEditTime: 2019-08-23 09:37:52
+ * @Description: 示例文件
+ -->
 <template>
   <div class="container">
     <div>
@@ -6,19 +12,10 @@
         nuxt_template
       </h1>
       <h2 class="subtitle">
-        My first-rate Nuxt.js project
+        欢迎使用tgo-cli脚手架创建nuxt项目！
       </h2>
       <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+        <van-button plain type="primary">欢迎使用</van-button>
       </div>
     </div>
   </div>
@@ -49,14 +46,14 @@ export default {
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 10px;
+  font-size: 2rem;
   color: #35495e;
   letter-spacing: 1px;
 }
 
 .subtitle {
   font-weight: 300;
-  font-size: 32px;
+  font-size: 1rem;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;

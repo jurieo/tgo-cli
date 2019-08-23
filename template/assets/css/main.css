@@ -9,7 +9,6 @@
 }
 
 html {
-  /* font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
   font-family: Helvetica;
   font-size: 10px;
   word-spacing: 1px;
@@ -70,10 +69,10 @@ a:active {
   color: #333333;
 }
 
-.r {
+.fr {
   float: right;
 }
 
-.l {
+.fl {
   float: left;
 }

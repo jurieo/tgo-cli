@@ -1,60 +1,134 @@
+/*
+ * @Author: Jurieo
+ * @Date: 2019-07-31 20:02:37
+ * @LastEditTime: 2019-08-23 11:46:12
+ * @Description: nuxt配置文件
+ */
+const pkg = require("./package");
+const path = require("path");
+const config = require("./envconfig");
+
 module.exports = {
   mode: "universal",
+
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || "",
+    title: pkg.name,
+    titleTemplate: `%s - name`, //${pkg.name}
     meta: [
       { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
-        hid: "description",
-        name: "description",
-        content: process.env.npm_package_description || ""
-      }
+        name: "viewport",
+        content:
+          "width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0"
+      },
+      { hid: "description", name: "description", content: pkg.description },
+      { httpEquiv: "X-UA-Compatible", name: "IE=edge, chrome=1" },
+      { name: "format-detection", content: "telphone=no, email=no" }, //忽略页面中的数字识别为电话，忽略email识别
+      { name: "apple-mobile-web-app-status-bar-style", content: "black" }, //苹果工具栏颜色
+      { name: "apple-mobile-web-app-capable", content: "yes" }, //启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏
+      { name: "msapplication-tap-highlight", content: "no" }, //windows phone 点击无高光
+      { name: "HandheldFriendly", content: "true" } //针对手持设备优化
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      {
+        rel: "icon",
+        type: "image/x-icon",
+        href: "/favicon.ico"
+      }
+    ]
   },
-  /*
-   ** Customize the progress-bar color
-   */
-  loading: { color: "#fff" },
+  loading: "~/components/loading.vue",
+  router: {
+    // middleware: 'router'
+  },
   /*
    ** Global CSS
    */
-  css: ["element-ui/lib/theme-chalk/index.css"],
+  css: ["~assets/css/main.css", "normalize.css"],
+  env: {
+    ERP_IMG: config.ERP_IMG,
+    ERP_API: config.ERP_API
+  },
+  debug: false,
+  dev: false,
+
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["@/plugins/vant"],
-  /*
-   ** Nuxt.js dev-modules
-   */
-  devModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    "@nuxtjs/eslint-module"
+  plugins: [
+    "~plugins/filter",
+    "~plugins/inject",
+    "~plugins/axios",
+    "~plugins/route",
+    "~plugins/vant",
+    { src: "~plugins/utils", ssr: false },
+    { src: "~plugins/lazy-load", ssr: false }
   ],
+
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    "@nuxtjs/proxy"
   ],
   /*
    ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
-  /*
-   ** Build configuration
-   */
+  axios: {
+    // prefix: '/erp', //
+    // baseURL: "http://localhost:4000",
+    proxy: true,
+    // prefix: '/', // baseURL
+    credentials: true
+    // See https://github.com/nuxt-community/axios-module#options
+  },
+  proxy: {
+    "/upload": {
+      target: config.ERP_API, //"http://114.55.31.163:8280",//
+      changeOrigin: true,
+      pathRewrite: {
+        "^/upload": ""
+      }
+    }
+  },
+  server: {
+    port: process.env.PORT,
+    host: "localhost"
+  },
   build: {
-    transpile: [/^vant/],
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {}
+    loaders: [
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: "url-loader",
+        query: {
+          limit: 10000,
+          name: "img/[name].[hash:7].[ext]"
+        }
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        loader: "file-loader",
+        query: {
+          limit: 10000,
+          name: "img/[name].[hash:7].[ext]"
+        }
+      }
+    ],
+    extend(config, { isDev, isClient }) {
+      postcss: [
+        require("postcss-pxtorem")({
+          rootValue: 10,
+          propList: ["*"]
+        }),
+        require("autoprefixer")({
+          browsers: ["Android >= 4.0", "iOS >= 7"]
+        })
+      ];
+    }
   }
 };

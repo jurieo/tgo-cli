@@ -1,11 +1,46 @@
+/*
+ * @Author: Jurieo
+ * @Date: 2019-08-09 11:32:38
+ * @LastEditTime: 2019-08-23 10:33:36
+ * @Description: 启动文件
+ */
 const express = require("express");
 const consola = require("consola");
 const { Nuxt, Builder } = require("nuxt");
+const bodyParser = require("body-parser");
 const app = express();
+const proxy = require("express-http-proxy");
 
 // Import and Set Nuxt.js options
 const config = require("../nuxt.config.js");
-config.dev = process.env.NODE_ENV !== "production";
+config.dev = process.env.NODE_ENV !== "prod";
+
+app.use(
+  bodyParser.json({
+    limit: "2mb"
+  })
+);
+app.use(
+  bodyParser.urlencoded({
+    limit: "2mb",
+    extended: true
+  })
+);
+
+console.log("当前运行环境:" + process.env.NODE_ENV);
+if (process.env.NODE_ENV) {
+  const config = require("../envconfig");
+  console.log(config);
+  process.env.ERP_API = config.ERP_API;
+  process.env.ERP_IMG = config.ERP_IMG;
+  process.env.PORT = config.PORT;
+}
+
+/**
+ * 跨域代理
+ */
+const PROXY_URL = process.env.ERP_API;
+app.use("/erp", proxy(PROXY_URL));
 
 async function start() {
   // Init Nuxt.js
