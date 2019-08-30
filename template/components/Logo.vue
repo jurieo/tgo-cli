@@ -1,3 +1,9 @@
+<!--
+ * @Author: Jurieo
+ * @Date: 2019-08-23 11:58:13
+ * @LastEditTime: 2019-08-23 17:02:51
+ * @Description: file
+ -->
 <template>
   <div class="VueToNuxtLogo">
     <div class="Triangle Triangle--two" />

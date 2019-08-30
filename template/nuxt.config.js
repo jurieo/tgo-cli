@@ -1,7 +1,7 @@
 /*
  * @Author: Jurieo
  * @Date: 2019-07-31 20:02:37
- * @LastEditTime: 2019-08-23 11:46:12
+ * @LastEditTime: 2019-08-30 09:45:00
  * @Description: nuxt配置文件
  */
 const pkg = require("./package");
@@ -50,7 +50,8 @@ module.exports = {
   css: ["~assets/css/main.css", "normalize.css"],
   env: {
     ERP_IMG: config.ERP_IMG,
-    ERP_API: config.ERP_API
+    ERP_API: config.ERP_API,
+    CRT_URL: config.CRT_URL
   },
   debug: false,
   dev: false,

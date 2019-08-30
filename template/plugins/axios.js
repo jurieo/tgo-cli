@@ -1,7 +1,7 @@
 /*
  * @Author: Jurieo
  * @Date: 2019-02-14 11:45:54
- * @LastEditTime: 2019-08-22 10:52:40
+ * @LastEditTime: 2019-08-30 09:32:16
  * @Description: ajax请求封装
  */
 import _tgo from "../core/_tgo";
@@ -15,7 +15,7 @@ export default function({ store, $axios, redirect, error }) {
 
   axios.defaults.baseURL = auth.apiUrl();
   // 请求回调
-  axios.onRequest((options) => {
+  axios.onRequest(options => {
     const resd = {
       token: store.state.token,
       openid: store.state.openid,
@@ -43,15 +43,19 @@ export default function({ store, $axios, redirect, error }) {
   });
   // 返回回调
   axios.onResponse(
-    (res) => {
+    res => {
       let data = res.data;
-      console.log(`请求数据：${res.config.data}`);
+      let isdev = process.env.NODE_ENV !== "prod";
+      if (!isdev) {
+        console.log(`请求数据：${res.config.data}`);
+        console.log(`返回数据：${JSON.stringify(data)}`);
+      }
       if (data.code == "auth_fail") {
         const opt = data.body[0];
-        data = store.dispatch("getToken").then((_) => {
+        data = store.dispatch("getToken").then(_ => {
           opt.token = store.state.token;
-          return new Promise((resolve) => {
-            axios.post("", opt).then((res) => {
+          return new Promise(resolve => {
+            axios.post("", opt).then(res => {
               resolve(res);
             });
           });
@@ -59,17 +63,16 @@ export default function({ store, $axios, redirect, error }) {
       }
       return data;
     },
-    (err) => {
+    err => {
       console.log("返回错误：" + err);
     }
   );
 
-  axios.onError((err) => {
-    debugger;
+  axios.onError(err => {
     const code = parseInt(err.response && err.response.status);
     console.log(
       `请求发生了错误，
-      错误代码：${code},
+      错误信息:${err.message},
       请求地址：${err.config.url},
       请求参数：${err.config.data}`
     );

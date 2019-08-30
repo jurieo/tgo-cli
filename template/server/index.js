@@ -1,7 +1,7 @@
 /*
  * @Author: Jurieo
  * @Date: 2019-08-09 11:32:38
- * @LastEditTime: 2019-08-23 10:33:36
+ * @LastEditTime: 2019-08-30 09:34:11
  * @Description: 启动文件
  */
 const express = require("express");
@@ -33,6 +33,7 @@ if (process.env.NODE_ENV) {
   console.log(config);
   process.env.ERP_API = config.ERP_API;
   process.env.ERP_IMG = config.ERP_IMG;
+  process.env.CRT_URL = config.CRT_URL;
   process.env.PORT = config.PORT;
 }
 
