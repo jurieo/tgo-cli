@@ -1,8 +1,8 @@
 {
-  "name": "name",
+  "name": "{{name}}",
   "version": "0.0.1",
-  "description": "这是使用tgo-cli自动生成的web移动端开发框架，基于nuxt和vant",
-  "author": "Jurieo",
+  "description": "{{description}}",
+  "author": "{{author}}",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=dev nodemon server/index.js --watch server ",
