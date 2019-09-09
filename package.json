@@ -1,6 +1,6 @@
 {
   "name": "tgo-cli",
-  "version": "0.7.0",
+  "version": "0.7.3",
   "description": "TGO-cli 是一套基于 Webpack4 快速搭建TGO插件开发环境的脚手架工具。",
   "keywords": [
     "webpack",
