@@ -1,6 +1,6 @@
 {
   "apps": [{
-    "name": "template",
+    "name": "{{name}}",
     "max_memory_restart": "500M",
     "script": "./server/index.js",
     "instances": 4,
@@ -16,8 +16,8 @@
     },
     "log_date_format": "YYYY-MM-DD HH:mm:ss",
     "combine_logs": true,
-    "error_file": "./logs/weshop-err.log",
-    "out_file": "./logs/weshop-out.log",
+    "error_file": "./logs/{{name}}-err.log",
+    "out_file": "./logs/{{name}}-out.log",
     "env_prod": {
       "NODE_ENV": "prod"
     },

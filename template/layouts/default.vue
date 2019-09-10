@@ -1,8 +1,8 @@
 <!--
  * @Author: Jurieo
  * @Date: 2019-08-23 11:35:07
- * @LastEditTime: 2019-08-23 11:52:25
- * @Description: file
+ * @LastEditTime: 2019-09-10 09:42:35
+ * @Description: 默认布局
  -->
 <template>
   <div>
