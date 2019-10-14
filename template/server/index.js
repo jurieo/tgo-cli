@@ -1,9 +1,3 @@
-/*
- * @Author: Jurieo
- * @Date: 2019-08-09 11:32:38
- * @LastEditTime: 2019-08-30 09:34:11
- * @Description: 启动文件
- */
 const express = require("express");
 const consola = require("consola");
 const { Nuxt, Builder } = require("nuxt");

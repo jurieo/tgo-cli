@@ -1,9 +1,3 @@
-/*
- * @Author: Jurieo
- * @Date: 2019-02-14 11:45:54
- * @LastEditTime: 2019-08-30 09:32:16
- * @Description: ajax请求封装
- */
 import _tgo from "../core/_tgo";
 import auth from "../core/auth";
 

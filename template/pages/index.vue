@@ -1,9 +1,4 @@
-<!--
- * @Author: Jurieo
- * @Date: 2019-08-09 11:32:38
- * @LastEditTime: 2019-08-23 09:37:52
- * @Description: 示例文件
- -->
+
 <template>
   <div class="container">
     <div>

@@ -1,9 +1,3 @@
-/*
- * @Author: Jurieo
- * @Date: 2019-08-23 09:43:48
- * @LastEditTime: 2019-08-23 09:56:35
- * @Description: 支付和客户端处理
- */
 import fastclick from "fastclick";
 import Vue from "vue";
 import wx from "weixin-js-sdk";
@@ -43,7 +37,7 @@ Vue.prototype.$doPay = function(param, _this) {
       success(res) {
         if (res.errMsg == "chooseWXPay:ok") {
           _this.$toast.success("支付成功");
-          setTimeout((_) => {
+          setTimeout(_ => {
             _this.$router.replace("/success"); // 支付成功页面
           }, 1000);
         } else {

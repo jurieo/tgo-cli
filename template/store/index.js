@@ -1,10 +1,3 @@
-/*
- * @Author: Jurieo
- * @Date: 2019-06-13 14:14:07
- * @LastEditTime: 2019-08-19 09:44:56
- * @Description: store
- */
-
 import auth from "../core/auth";
 
 // export const debug = true;
@@ -18,7 +11,7 @@ export const mutations = {
   }
 };
 export const actions = {
-  getToken({ commit, state }) {
+  getToken({ commit }) {
     return new Promise((resolve, reject) => {
       auth
         .getTokenAsync()
@@ -31,10 +24,9 @@ export const actions = {
           reject(error);
         });
     });
-  }
+  },
 
-  // nuxtServerInit({ dispatch, commit, state }, { req, res }) {
-  //   console.log("nuxtServerInit");
-  //   console.log("url:"+req.headers.host);
-  // },
+  nuxtServerInit({ dispatch, commit, state }, { req, res }) {
+    console.log("nuxtServerInit");
+  }
 };

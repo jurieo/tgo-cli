@@ -1,9 +1,3 @@
-/*
- * @Author: Jurieo
- * @Date: 2019-08-23 10:13:58
- * @LastEditTime: 2019-08-23 10:19:50
- * @Description: 数据统计
- */
 import MtaH5 from "./mta_tencent";
 
 /**
