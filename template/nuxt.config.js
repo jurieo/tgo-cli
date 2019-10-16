@@ -1,7 +1,7 @@
 /*
  * @Author: Jurieo
  * @Date: 2019-07-31 20:02:37
- * @LastEditTime: 2019-08-30 09:45:00
+ * @LastEditTime: 2019-10-15 17:19:10
  * @Description: nuxt配置文件
  */
 const pkg = require("./package");
@@ -102,24 +102,6 @@ module.exports = {
     host: "localhost"
   },
   build: {
-    loaders: [
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        loader: "url-loader",
-        query: {
-          limit: 10000,
-          name: "img/[name].[hash:7].[ext]"
-        }
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/,
-        loader: "file-loader",
-        query: {
-          limit: 10000,
-          name: "img/[name].[hash:7].[ext]"
-        }
-      }
-    ],
     extend(config, { isDev, isClient }) {
       postcss: [
         require("postcss-pxtorem")({
