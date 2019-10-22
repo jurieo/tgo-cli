@@ -59,18 +59,8 @@ app.use(
     saveUninitialized: false
   })
 );
-
-app.use(
-  bodyParser.json({
-    limit: "2mb"
-  })
-);
-app.use(
-  bodyParser.urlencoded({
-    limit: "2mb",
-    extended: true
-  })
-);
+app.use(bodyParser.json({ limit: "2mb" }));
+app.use(bodyParser.urlencoded({ limit: "2mb", extended: true }));
 
 console.log("当前运行环境:" + process.env.NODE_ENV);
 if (process.env.NODE_ENV) {
