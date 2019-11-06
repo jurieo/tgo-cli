@@ -1,4 +1,5 @@
 import auth from "../core/auth";
+import VuexPersistence from "vuex-persist";
 
 // export const debug = true;
 export const state = _ => ({
@@ -30,3 +31,5 @@ export const actions = {
     console.log("nuxtServerInit");
   }
 };
+
+export const plugins = [new VuexPersistence().plugin];

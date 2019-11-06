@@ -16,7 +16,7 @@ module.exports = {
    */
   head: {
     title: pkg.name,
-    titleTemplate: `%s - name`, //${pkg.name}
+    titleTemplate: `%s - ${pkg.name}`, //
     meta: [
       { charset: "utf-8" },
       {
@@ -66,6 +66,8 @@ module.exports = {
     "~plugins/route",
     "~plugins/vant",
     { src: "~plugins/utils", ssr: false },
+    { src: "~plugins/rem", ssr: false },
+    { src: "~plugins/vuex-persist", ssr: false },
     { src: "~plugins/lazy-load", ssr: false }
   ],
 

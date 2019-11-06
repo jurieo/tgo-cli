@@ -37,6 +37,7 @@
     "redis": "^2.8.0",
     "vant": "^2.2.7",
     "vue-lazyload": "^1.2.6",
+    "vuex-persist": "^2.1.1",
     "weixin-js-sdk": "^1.4.0-test"
   },
   "devDependencies": {
