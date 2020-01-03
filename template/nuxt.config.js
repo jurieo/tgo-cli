@@ -104,16 +104,21 @@ module.exports = {
     host: "localhost"
   },
   build: {
-    extend(config, { isDev, isClient }) {
-      postcss: [
-        require("postcss-pxtorem")({
-          rootValue: 10,
-          propList: ["*"]
-        }),
-        require("autoprefixer")({
-          browsers: ["Android >= 4.0", "iOS >= 7"]
-        })
-      ];
+    postcss: {
+      // 添加插件名称作为键，参数作为值
+      // 使用npm或yarn安装它们
+      plugins: {
+        "postcss-pxtorem": {
+          rootValue: 100,
+          propList: ["*"],
+          selectorBlackList: ["van-"]
+        },
+        autoprefixer: {}
+      },
+      preset: {
+        // 更改postcss-preset-env 设置
+        autoprefixer: true
+      }
     }
   }
 };

@@ -11,35 +11,20 @@ const Cookies = require("js-cookie");
 
 const $ = {
   ajax: options => {
-    const successFun = function(idata) {
+    let successFun = function(idata) {
       const data = idata;
-      if (data.code == "auth_fail") {
-        auth
-          .getTokenAsync()
-          .then(res => {
-            const token = res.data.body.token;
-            options.data.token = token;
-            $.ajax(options);
-          })
-          .catch(err => {
-            console.log("发生错误了:" + err);
-          });
-      } else {
-        options.success(data);
-      }
+      options.success(data);
     };
-    const errorFun = function(err) {
-      console.log(
-        `请求发生错误，
-      错误信息:${err.message},
-      请求地址：${err.config.url},
-      请求参数：${err.config.data}`
-      );
-      options.error && options.error();
+    let errorFun = function(idata) {
+      // console.log("出错了，请求数据:" + idata.config.data);
+      options.error && options.error(idata);
     };
 
-    stores.$axios
-      .post("", options.data)
+    let method = options.type || "post",
+      isGet = options.type == "get" ? 1 : 0,
+      params = isGet ? { params: options.data } : options.data;
+
+    stores.$axios[method](options.data.api, params)
       .then(successFun)
       .catch(errorFun);
   },

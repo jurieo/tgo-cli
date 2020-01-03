@@ -1,4 +1,3 @@
-
 <template>
   <div class="container">
     <div>
@@ -41,7 +40,7 @@ export default {
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 350px;
+  font-size: 30px;
   color: #35495e;
   letter-spacing: 1px;
 }

@@ -35,7 +35,7 @@
     "nuxt": "^2.10.1",
     "path": "^0.12.7",
     "redis": "^2.8.0",
-    "vant": "^2.2.7",
+    "vant": "^2.4.0",
     "vue-lazyload": "^1.2.6",
     "vuex-persist": "^2.1.1",
     "weixin-js-sdk": "^1.4.0-test"
@@ -50,6 +50,6 @@
     "nodemon": "^1.18.9",
     "normalize.css": "^8.0.1",
     "postcss-pxtorem": "^4.0.1",
-    "prettier": "^1.16.4"
+    "prettier": "^1.19.1"
   }
 }

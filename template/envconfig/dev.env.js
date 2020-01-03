@@ -8,7 +8,6 @@ module.exports = {
   ENV_CONFIG: "dev",
   ERP_API: "http://xxx/",
   ERP_IMG: "http://xxxx/",
-  CRT_URL: `http://${process.env.HOST || "localhost"}:${process.env.PORT ||
-    4000}`,
-  PORT: 4000
+  CRT_URL: `http://localhost:4500`,
+  PORT: 4500
 };
