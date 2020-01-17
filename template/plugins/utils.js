@@ -1,7 +1,10 @@
 import fastclick from "fastclick";
+import "amfe-flexible";
+
 import Vue from "vue";
 import wx from "weixin-js-sdk";
 import $ from "../core/utils";
+import { time } from "../core/filters";
 
 fastclick.attach(document.body);
 
@@ -65,4 +68,13 @@ Vue.prototype.$loading = function(msg = "加载中") {
     forbidClick: true, // 禁用背景点击
     loadingType: "spinner"
   });
+};
+Vue.prototype.$toURL = function(url) {
+  this.$router.push(url);
+};
+Vue.prototype.$redirectURL = function(url) {
+  location.href = decodeURIComponent(url);
+};
+Vue.prototype.$getTime = function(t, fmt) {
+  return time(t, fmt);
 };

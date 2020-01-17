@@ -66,7 +66,6 @@ module.exports = {
     "~plugins/route",
     "~plugins/vant",
     { src: "~plugins/utils", ssr: false },
-    { src: "~plugins/rem", ssr: false },
     { src: "~plugins/vuex-persist", ssr: false },
     { src: "~plugins/lazy-load", ssr: false }
   ],
@@ -109,7 +108,7 @@ module.exports = {
       // 使用npm或yarn安装它们
       plugins: {
         "postcss-pxtorem": {
-          rootValue: 100,
+          rootValue: 75,
           propList: ["*"],
           selectorBlackList: ["van-"]
         },
