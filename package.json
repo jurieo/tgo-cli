@@ -1,6 +1,6 @@
 {
   "name": "tgo-cli",
-  "version": "0.8.13",
+  "version": "0.9.1",
   "description": "TGO-cli 是一套基于 SSR 快速搭建 TGO 开发环境的脚手架工具，基于 nuxtjs 和 vant移动端UI组件库，使用 pm2 做负载均衡。",
   "keywords": [
     "webpack",

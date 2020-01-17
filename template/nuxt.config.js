@@ -61,7 +61,6 @@ module.exports = {
    */
   plugins: [
     "~plugins/filter",
-    "~plugins/inject",
     "~plugins/axios",
     "~plugins/route",
     "~plugins/vant",
@@ -91,7 +90,7 @@ module.exports = {
   },
   proxy: {
     "/upload": {
-      target: config.ERP_API, //"http://114.55.31.163:8280",//
+      target: config.ERP_API,
       changeOrigin: true,
       pathRewrite: {
         "^/upload": ""
