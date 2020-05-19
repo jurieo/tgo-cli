@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-require('../lib/initialization')();
+require("../lib/initialization")();
 
 /**
  * 初始化项目顺序

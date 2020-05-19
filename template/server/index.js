@@ -19,7 +19,7 @@ const session = require("express-session");
 
 /**
  * redisConfig配置说明
- * 
+ *
  * host:redis主机名
  * port:默认6379
  * ttl: 过期时间，默认是session.maxAge, 或者是一天
@@ -33,7 +33,7 @@ const session = require("express-session");
  * 如果值为true，则会提供一个默认的处理方法（console.error）;
    如果是一个函数，则redis的报错信息由它来处理
    如果值为false，则不处理出错信息
- * 
+ *
  */
 // 生产环境如需加入redis则解注释
 // const redisConfig = {

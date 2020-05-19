@@ -17,6 +17,18 @@
   "bin": {
     "tgo": "./bin/tgo-cli.js"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**": [
+      "prettier --config .prettierrc --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jurieo/tgo-cli.git"
